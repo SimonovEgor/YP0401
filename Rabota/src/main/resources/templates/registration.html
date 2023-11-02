@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        background-color: rgb(245, 249, 250);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    h2 {
+        margin-top: 0;
+    }
+    .btn {
+        background-color: #007bff;
+        color: white;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body>
+<form action="/registration" method="post">
+    <p class="h2">РЕГИСТРАЦИЯ</p>
+    <hr><br>
+    <label> Логин : <input type="text" placeholder="Логин" name="username"></label>
+    <hr><br>
+    <label> Пароль : <input  type="password" placeholder="Пароль" name="password"></label>
+    <hr><br>
+    <button class="btn btn-primary"  type="submit">Зарегистрироваться</button>
+    <hr><br>
+    <a href="/login">Уже зарегестрированы?</a>
+</form>
+</body>
+</html>

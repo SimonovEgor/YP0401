@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>AUTH</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        background-color: rgb(245, 249, 250);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    h2 {
+        margin-top: 0;
+    }
+    .btn {
+        background-color: #007bff;
+        color: white;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* helpers/grid.css */
+
+    .grid {
+        inline-size: 90%;
+        margin-inline: auto;
+        max-inline-size: 48em;
+    }
+
+    /* helpers/sticky.css */
+
+    .sticky {
+        position: sticky;
+        will-change: transform;
+    }
+
+    .sticky--top {
+        top: 0;
+    }
+
+    /* layout/base.css */
+
+    * {
+        box-sizing: inherit;
+    }
+
+    html {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.75;
+        margin: 0;
+        min-block-size: 100vh;
+    }
+
+    /* layout/header.css */
+
+    .header {
+        background-color: #fff;
+        padding-block: 1em;
+    }
+
+
+    .header::after {
+        bottom: 0;
+        box-shadow: 0 0.0625em 0.5em rgba(0, 0, 0, 0.3);
+        content: '';
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: opacity 0.3s;
+        z-index: -1;
+    }
+
+    .header.is-active::after {
+        opacity: 1;
+    }
+
+    /* layout/main.css */
+
+    .main {
+        padding-block: 6em;
+    }
+
+    /* modules/headline.css */
+
+    h1 {
+        margin-block: 0 0.5em;
+    }
+
+    /* modules/navigation.css */
+
+    .navigation__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navigation__list--inline {
+        display: flex;
+        gap: 1.5em;
+    }
+
+    .navigation__link {
+        color: inherit;
+        display: block;
+        padding-inline: 1em;
+        text-decoration: none;
+    }
+
+    .navigation__link--is-active {
+        background-color: #000;
+        border-radius: 999em;
+        color: #fff;
+    }
+
+    /* modules/paragraph.css */
+
+    p {
+        padding-block: 1.5em;
+    }
+</style>
+
+<body>
+
+<form th:action="@{/login}" method="post">
+    <p class="h2">АВТОРИЗАЦИЯ</p>
+    <hr><br>
+    <div><label> Логин : <input type="text" name="username"/> </label></div>
+    <hr><br>
+    <div><label> Пароль : <input type="password" name="password"/> </label></div>
+    <hr><br>
+    <div><input class="btn btn-primary" type="submit" value="Авторизация"/></div>
+    <hr><br>
+    <a href="/registration">Не зарегистрированы?</a>
+    <hr><br>
+    <div th:if="${param.error}">
+        Неверное имя пользователя или пароль.
+    </div>
+</form>
+
+
+</body>
+</html>
